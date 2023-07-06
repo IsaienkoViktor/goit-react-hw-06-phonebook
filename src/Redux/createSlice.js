@@ -26,11 +26,9 @@ const contactSlice = createSlice({
         };
       },
     },
-    deleteContact: {
-      reducer(state, { payload }) {
-        const index = state.items.findIndex(item => item.id !== payload);
-        state.items.splice(index, 1);
-      },
+    deleteContact(state, { payload }) {
+      const index = state.items.findIndex(item => item.id === payload);
+      state.items.splice(index, 1);
     },
     setFilter: {
       reducer(state, { payload }) {
